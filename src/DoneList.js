@@ -6,30 +6,27 @@ export default({
 }) => {
 
 const donelist = data.map((done, index) => {
+  console.log(done)
   return(
     <li
       key={index}
       onClick={() => handleClick(done, index)}
     >
-      <s>{done.item}</s>
+      {done.item}
+       <span style={{'float': 'right'}}>{done.time}</span>
     </li>
   )
 })
 
-function DoneTitle() {
-  const finishedTodos = donelist.length;
-  if (finishedTodos > 0)
-    return(
-      <h2>Done: {finishedTodos}</h2>
-    )
-  return(
-    <div></div>
-  )
-}
-
 return(
   <div>
-    <DoneTitle />
+
+    {donelist.length > 0 &&
+      <h2>
+        Done: {donelist.length}
+      </h2>
+    }
+
     <ul className="donelist">{donelist}</ul>
   </div>
 )}

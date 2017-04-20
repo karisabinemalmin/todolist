@@ -4,15 +4,16 @@ export default class InputField extends Component {
 
   render() {
 
-    const {inputText, handleSubmit, filterUpdate} = this.props
+    const { inputText, response, handleSubmit, filterUpdate } = this.props
 
     return(
       <form>
+
         <input
           type="text"
           ref="myValue"
           value={inputText}
-          placeholder="Type todo + enter"
+          placeholder="What do you need to do?"
           onChange={() => {
            filterUpdate(this.refs.myValue.value)
           }}
@@ -22,10 +23,14 @@ export default class InputField extends Component {
           type="submit"
           className="submit"
           onClick={handleSubmit}
-        >
-          Add todo
+          >
+            Add
         </button>
+
+        <p className="response">{response}</p>
+
       </form>
+
     )
   }
 }

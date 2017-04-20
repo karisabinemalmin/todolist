@@ -8,6 +8,7 @@ export default ({
     <li>
       <label>
         <input
+          value={todo}
           key={todo}
           type="checkbox"
           onClick={() => handleClick(todo)}

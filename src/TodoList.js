@@ -8,9 +8,9 @@ export default ({
 }) => {
   const list = todos.map((todo, index) =>
     <Todo
-      todo={todo.item}
-      key={index}
       handleClick={() => handleClick(todo, index)}
+      key={index}
+      todo={todo.item}
     />
   )
   return(
