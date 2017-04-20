@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  padding: 5em;
+  padding: 1.5em;
   font-family: "Roboto";
   background: #F7EFEA;
   line-height: 1.5em;
@@ -44,6 +44,7 @@ input[type="checkbox"] {
 }
 .visually-hidden {
   opacity: 0;
+  height: 0px;
 }
 .donelist li:hover:after {
   font-style: italic;
