@@ -10,15 +10,15 @@ const donelist = data.map((done, index) => {
     <li
       key={index}
     >
-      <label htmlFor={done}>
+      <label htmlFor={done.item}>
         <input
-          id={done}
-          name={done}
-          value={done}
-          key={done}
+          id={done.item}
+          name={done.item}
+          value={done.item}
+          key={done.item}
           type="checkbox"
           checked="true"
-          onClick={() => handleClick(done, index)}
+          onChange={() => handleClick(done, index)}
         />
         <span></span>
         {done.item}
