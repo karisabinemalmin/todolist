@@ -33,7 +33,7 @@ return(
       <CSSTransitionGroup
         transitionName="todo"
         transitionEnterTimeout={200}
-        transitionActiveTimeout={200}
+        transitionActiveTimeout={false}
         transitionLeaveTimeout={2000}
       >
         {donelist}
