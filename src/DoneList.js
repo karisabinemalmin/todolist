@@ -1,5 +1,4 @@
 import React from 'react'
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 export default({
   data,
@@ -39,13 +38,7 @@ return(
     }
 
     <ul className="donelist">
-      <CSSTransitionGroup
-        transitionName="todo"
-        transitionEnterTimeout={200}
-        transitionLeaveTimeout={200}
-      >
-        {donelist}
-      </CSSTransitionGroup>
+      {donelist}
     </ul>
   </div>
 )}
