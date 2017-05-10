@@ -54,7 +54,8 @@ label {
   font-size: inherit;
   background: none;
   background: #EAC280;
-  display: none;
+  opacity: 0;
+  height: 0;
 }
 
 h1,
@@ -116,7 +117,6 @@ ul li {
 .todo-enter {
   opacity: 0;
   margin-left: -100%;
-  /*position: absolute;*/
 }
 .todo-active label {
   display: none;
