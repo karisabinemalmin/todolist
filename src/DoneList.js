@@ -1,4 +1,5 @@
 import React from 'react'
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 export default({
   data,
@@ -6,20 +7,21 @@ export default({
 }) => {
 
 const donelist = data.map((done, index) => {
-  console.log(done)
   return(
     <li
       key={index}
       onClick={() => handleClick(done, index)}
     >
-      {done.item}
-       <span style={{'float': 'right'}}>{done.time}</span>
+      <label>
+        {done.item}
+        <span style={{'float': 'right'}}>{done.time}</span>
+      </label>
     </li>
   )
 })
 
 return(
-  <div>
+  <div className="wrapper">
 
     {donelist.length > 0 &&
       <h2>
@@ -27,6 +29,15 @@ return(
       </h2>
     }
 
-    <ul className="donelist">{donelist}</ul>
+    <ul className="donelist">
+      <CSSTransitionGroup
+        transitionName="todo"
+        transitionEnterTimeout={200}
+        transitionActiveTimeout={200}
+        transitionLeaveTimeout={2000}
+      >
+        {donelist}
+      </CSSTransitionGroup>
+    </ul>
   </div>
 )}

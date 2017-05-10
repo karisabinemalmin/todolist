@@ -6,8 +6,10 @@ export default ({
 }) => {
   return (
     <li>
-      <label>
+      <label htmlFor={todo}>
         <input
+          id={todo}
+          name={todo}
           value={todo}
           key={todo}
           type="checkbox"

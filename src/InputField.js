@@ -13,7 +13,7 @@ export default class InputField extends Component {
           type="text"
           ref="myValue"
           value={inputText}
-          placeholder="What do you need to do?"
+          placeholder="Add todo"
           onChange={() => {
            filterUpdate(this.refs.myValue.value)
           }}

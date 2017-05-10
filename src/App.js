@@ -72,8 +72,6 @@ export default class App extends Component {
   }
 
   render() {
-
-    console.log(this.state.donelist)
     return(
       <div>
         <h1 className="visually-hidden">To-do list</h1>
