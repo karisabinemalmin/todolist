@@ -61,6 +61,15 @@ export default class App extends Component {
     })
   }
 
+  // Delete when an item is clicked
+  handleDelete(todo, index) {
+    this.setState({
+      todos: update(this.state.todos, {
+        $splice: [[index, 1]]
+      })
+    })
+  }
+
   // Update when a done item is clicked
   handleDone(todo, index) {
     this.setState({
@@ -70,6 +79,7 @@ export default class App extends Component {
       todos: this.state.todos.concat([todo])
     })
   }
+
 
   render() {
     return(
@@ -86,6 +96,7 @@ export default class App extends Component {
         <TodoList
           todos={this.state.todos}
           handleClick={this.handleClick.bind(this)}
+          handleDelete={this.handleDelete.bind(this)}
         />
 
         <DoneList

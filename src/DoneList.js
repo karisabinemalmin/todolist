@@ -14,7 +14,7 @@ const donelist = data.map((done, index) => {
     >
       <label>
         {done.item}
-        <span style={{'float': 'right'}}>{done.time}</span>
+        <span style={{'float': 'right', 'opacity': '.5'}}>{done.time}</span>
       </label>
     </li>
   )
@@ -25,7 +25,7 @@ return(
 
     {donelist.length > 0 &&
       <h2>
-        Done: {donelist.length}
+        Completed: {donelist.length}
       </h2>
     }
 
@@ -33,8 +33,7 @@ return(
       <CSSTransitionGroup
         transitionName="todo"
         transitionEnterTimeout={200}
-        transitionActiveTimeout={false}
-        transitionLeaveTimeout={2000}
+        transitionLeaveTimeout={200}
       >
         {donelist}
       </CSSTransitionGroup>

@@ -51,6 +51,33 @@ label {
   display: block;
 }
 
+li {
+  display: block;
+  width: 100%;
+}
+li label {
+  width: 75%;
+}
+li .delete {
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 100%;
+  padding: .5em;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+li:hover .delete {
+  opacity: .5;
+}
+li:hover .delete:hover {
+  opacity: 1;
+}
+
 .submit {
   border-color: transparent;
   padding: .5em 1em;
@@ -64,11 +91,13 @@ label {
 h1,
 h2 {
   font-weight: 100;
-  text-align: center;
+  font-size: 1em;
+  text-align: left;
+  padding-left: 1em;
 }
 
 input[type="checkbox"] {
-  margin-right: .5em;
+  margin-right: 1em;
 }
 
 input[type="checkbox"]:after {
@@ -80,6 +109,11 @@ input[type="checkbox"]:after {
   border: 1px solid #ddd;
   margin-right: 2em;
 }
+
+label:hover input[type="checkbox"]:after {
+  background: #ddd;
+}
+
 
 .visually-hidden {
   opacity: 0;
@@ -110,6 +144,7 @@ ul li {
   position: relative;
   transition: .25s;
   margin: 0 2.25em 0 1em;
+  display: block;
 }
 
 @media (min-width: 600px) {

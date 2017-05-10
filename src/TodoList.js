@@ -4,11 +4,13 @@ import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 export default ({
   handleClick,
+  handleDelete,
   todos
 }) => {
   const list = todos.map((todo, index) =>
     <Todo
       handleClick={() => handleClick(todo, index)}
+      handleDelete={() => handleDelete(todo, index)}
       key={index}
       todo={todo.item}
     />
@@ -19,8 +21,7 @@ export default ({
         <CSSTransitionGroup
           transitionName="todo"
           transitionEnterTimeout={200}
-          transitionActiveTimeout={false}
-          transitionLeaveTimeout={2000}
+          transitionLeaveTimeout={200}
         >
           {list}
         </CSSTransitionGroup>

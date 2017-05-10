@@ -2,7 +2,8 @@ import React from 'react'
 
 export default ({
   todo,
-  handleClick
+  handleClick,
+  handleDelete
 }) => {
   return (
     <li>
@@ -17,6 +18,12 @@ export default ({
         />
         {todo}
       </label>
+      <span
+        className="delete"
+        onClick={() => handleDelete()}
+      >
+        Delete
+      </span>
     </li>
   )
 }
