@@ -44,11 +44,12 @@ label {
   cursor: pointer;
   background: #fff;
   border-radius: 3px;
-  box-shadow: 2px 2px 3px #ddd;
+  box-shadow: 2px 2px 3px #dcd9d7;
   opacity: .8;
   padding: .5em 1em;
   margin: 10px 0;
   display: block;
+  transition: .25s;
 }
 
 li {
@@ -97,17 +98,32 @@ h2 {
 }
 
 input[type="checkbox"] {
-  margin-right: 1em;
+  margin: 0;
+  opacity: 0;
 }
 
-input[type="checkbox"]:after {
-  content: '';
+input[type="checkbox"] + span {
   display: block;
+  float: left;
   width: 15px;
   height: 15px;
+  margin-top: 3px;
   background: #fff;
   border: 1px solid #ddd;
-  margin-right: 2em;
+}
+
+label:hover input[type="checkbox"] + span:after,
+input[type="checkbox"]:checked + span:after {
+  content: "✔";
+  background: #000;
+  text-align: center;
+  display: block;
+  line-height: 1em;
+  background: #eee;
+}
+
+label:hover input[type="checkbox"]:checked + span:after {
+  opacity: .5;
 }
 
 label:hover input[type="checkbox"]:after {
@@ -119,14 +135,6 @@ label:hover input[type="checkbox"]:after {
   opacity: 0;
   height: 0;
   margin: 0;
-}
-
-.donelist li:hover:after {
-  opacity: .3;
-  content: " Redo";
-  position: absolute;
-  left: -3em;
-  top: 1em;
 }
 
 button:disabled {

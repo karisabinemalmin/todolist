@@ -10,9 +10,18 @@ const donelist = data.map((done, index) => {
   return(
     <li
       key={index}
-      onClick={() => handleClick(done, index)}
     >
-      <label>
+      <label htmlFor={done}>
+        <input
+          id={done}
+          name={done}
+          value={done}
+          key={done}
+          type="checkbox"
+          checked="true"
+          onClick={() => handleClick(done, index)}
+        />
+        <span></span>
         {done.item}
         <span style={{'float': 'right', 'opacity': '.5'}}>{done.time}</span>
       </label>

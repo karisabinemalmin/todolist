@@ -16,6 +16,7 @@ export default ({
           type="checkbox"
           onClick={() => handleClick(todo)}
         />
+        <span></span>
         {todo}
       </label>
       <span
