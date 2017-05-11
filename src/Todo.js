@@ -2,17 +2,19 @@ import React from 'react'
 
 export default ({
   todo,
+  index,
   handleClick,
   handleDelete
 }) => {
   return (
-    <li>
+    <li
+      key={index}
+      >
       <label htmlFor={todo}>
         <input
           id={todo}
           name={todo}
           value={todo}
-          key={todo}
           type="checkbox"
           onClick={() => handleClick(todo)}
         />
@@ -23,7 +25,7 @@ export default ({
         className="delete"
         onClick={() => handleDelete()}
       >
-        Delete
+        🗑
       </span>
     </li>
   )

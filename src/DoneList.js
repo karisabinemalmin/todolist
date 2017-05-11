@@ -22,7 +22,7 @@ const donelist = data.map((done, index) => {
         />
         <span></span>
         {done.item}
-        <span style={{'float': 'right', 'opacity': '.5'}}>{done.time}</span>
+        <span style={{'float': 'right', 'opacity': '.5', 'font-size': '.6em'}}>{done.time}</span>
       </label>
     </li>
   )

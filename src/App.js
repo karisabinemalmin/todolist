@@ -17,6 +17,14 @@ export default class App extends Component {
     }
   }
 
+  handleClear() {
+    this.setState({
+      todos: [],
+      donelist: []
+    })
+    localStorage.clear();
+  }
+
   // Update state when input field is changed
   filterUpdate(value) {
     this.setState({
@@ -110,6 +118,13 @@ export default class App extends Component {
           data={this.state.donelist}
           handleClick={this.handleDone.bind(this)}
         />
+
+        <span
+          onClick={this.handleClear.bind(this)}
+          className="clear"
+          >
+          Clear
+        </span>
 
       </div>
     )
