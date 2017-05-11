@@ -18,7 +18,7 @@ export default ({
     <div className="wrapper">
 
       {list.length === 0 &&
-        <span style={{ 'opacity': '.5', 'text-align': 'center', 'display': 'block' }}>
+        <span style={{ 'opacity': '.5', 'textAlign': 'center', 'display': 'block' }}>
           No todos
         </span>
       }

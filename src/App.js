@@ -10,9 +10,9 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todos: this.props.data,
+      todos: JSON.parse(localStorage.getItem('todos')) || [],
       inputtext: '',
-      donelist: [],
+      donelist: JSON.parse(localStorage.getItem('donelist')) || [],
       response: ''
     }
   }
@@ -24,14 +24,17 @@ export default class App extends Component {
     });
   }
 
+  componentDidUpdate() {
+    localStorage.setItem(
+      'todos', JSON.stringify(this.state.todos)
+    );
+    localStorage.setItem(
+      'donelist', JSON.stringify(this.state.donelist)
+    );
+  }
+
   // update state when submit is clicked
   handleSubmit(value) {
-    const newTodos = this.state.todos.concat([
-      {
-        item: this.state.inputtext
-      }
-    ])
-
     let response = ''
     if (this.state.inputtext.length < 1) {
       response = 'Please write something first'
@@ -39,7 +42,11 @@ export default class App extends Component {
 
     this.setState({
       inputtext: '',
-      todos: newTodos,
+      todos: update(this.state.todos, {
+        $push: [
+          {'item': this.state.inputtext}
+        ]
+      }),
       response: response
     })
 
@@ -103,6 +110,7 @@ export default class App extends Component {
           data={this.state.donelist}
           handleClick={this.handleDone.bind(this)}
         />
+
       </div>
     )
   }
