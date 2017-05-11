@@ -5,10 +5,17 @@ body {
   padding: 0;
   font-family: "Roboto";
   background: #F7EFEA;
+  background-size: cover;
   line-height: 1.5em;
 }
 
+* {
+  transition: .25s;
+}
+
 .wrapper {
+  padding: 1em;
+  border-radius: 3px;
   max-width: 400px;
   margin: 0 auto;
 }
@@ -66,12 +73,14 @@ label {
   cursor: pointer;
   background: #fff;
   border-radius: 3px;
-  box-shadow: 2px 2px 3px #dcd9d7;
   opacity: .8;
   padding: .5em 1em;
   margin: 10px 0;
   display: block;
   transition: .25s;
+}
+label:hover {
+  box-shadow: 2px 2px 3px #dcd9d7;
 }
 
 li {
@@ -128,23 +137,21 @@ input[type="checkbox"] + span {
   height: 15px;
   margin-top: 3px;
   background: #fff;
+  border-radius: 100%;
   border: 1px solid #ddd;
 }
 
 
-ul:first-child label:hover input[type="checkbox"] + span,
+ul:first-child label:hover input[type="checkbox"] + span:after,
+ul:nth-child(2) input[type="checkbox"] + span:after,
 input[type="checkbox"]:checked + span:after,
-input[type="checkbox"]:focus + span {
-  content: "✔";
-  background: #000;
+input[type="checkbox"]:focus + span:after {
+  content: "•";
+  font-size: 1.5em;
+  color: #6D5FFF;
   text-align: center;
   display: block;
-  line-height: 1em;
-  background: #eee;
-}
-
-label:hover input[type="checkbox"]:checked + span:after {
-  opacity: .5;
+  line-height: .5em;
 }
 
 label:hover input[type="checkbox"]:after {
@@ -183,6 +190,7 @@ ul li {
 }
 
 .clear {
+  opacity: .5;
   text-align: center;
   width: 100%;
   display: block;
