@@ -1,5 +1,6 @@
 import React from 'react'
 import Todo from './Todo'
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 export default ({
   handleClick,
@@ -24,7 +25,14 @@ export default ({
       }
 
       <ul>
-        {list}
+        <CSSTransitionGroup
+          transitionName="todo"
+          transitionEnterTimeout={200}
+          transitionActiveTimeout={200}
+          transitionLeaveTimeout={2000}
+        >
+          {list}
+        </CSSTransitionGroup>
       </ul>
     </div>
   )

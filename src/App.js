@@ -11,8 +11,8 @@ export default class App extends Component {
     super(props);
     this.state = {
       todos: JSON.parse(localStorage.getItem('todos')) || [],
-      inputtext: '',
       donelist: JSON.parse(localStorage.getItem('donelist')) || [],
+      inputtext: '',
       response: ''
     }
   }

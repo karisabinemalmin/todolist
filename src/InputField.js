@@ -8,7 +8,6 @@ export default class InputField extends Component {
 
     return(
       <form>
-
         <input
           type="text"
           ref="myValue"
