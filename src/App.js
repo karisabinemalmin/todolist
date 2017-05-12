@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../style/app.scss';
+import './style/app.scss';
 import TodoList from './TodoList'
 import DoneList from './DoneList'
 import InputField from './InputField'
