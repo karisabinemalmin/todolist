@@ -1,0 +1,29 @@
+@import 'variables.scss';
+
+input[type="checkbox"] {
+  margin: 0;
+  opacity: 0;
+
+  + span {
+    width: $base-unit * 2;
+    height: $base-unit * 2;
+    margin-top: $base-unit / 2;
+    border-radius: 100%;
+    border: 1px solid #ddd;
+    display: block;
+    float: left;
+  }
+}
+
+ul:first-child label:hover input[type="checkbox"] + span:after,
+ul:nth-child(2) input[type="checkbox"] + span:after,
+input[type="checkbox"]:checked + span:after,
+input[type="checkbox"]:focus + span:after {
+  content: "";
+  height: $base-unit;
+  width: $base-unit;
+  border-radius: 100%;
+  margin: ($base-unit / 2 - 1) auto;
+  background: #6D5FFF;
+  display: block;
+}

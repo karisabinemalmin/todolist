@@ -1,0 +1,37 @@
+
+form {
+  line-height: 1em;
+  margin: 0 0 1.25em;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+  :before {
+    content: "+";
+    font-size: 1.5em;
+    position: absolute;
+    top: .85em;
+    left: 1em;
+    color: #6D5FFF;
+    height: .6em;
+    width: .6em;
+    text-align: center;
+    line-height: 1.7em;
+    pointer-events: none;
+  }
+}
+
+input[type="text"] {
+  display: block;
+  padding: 1em 2em 1em 2.5em;
+  font-size: 1.5em;
+  width: inherit;
+  outline: none;
+  box-shadow: none;
+  border: 0;
+  transition: .25s;
+  &:focus {
+    box-shadow: 2px 2px 16px #ddd;
+    opacity: 1;
+  }
+}
